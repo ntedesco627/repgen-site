@@ -1,0 +1,248 @@
+/* RepGen Support & Privacy – mobile-first, Apple-compliant */
+
+:root {
+  --accent: #00BFAE;
+  --accent-dark: #009a8c;
+  --text: #1a1a1a;
+  --text-muted: #555;
+  --bg: #fafafa;
+  --surface: #fff;
+  --border: #e0e0e0;
+  --radius: 8px;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero */
+.hero {
+  padding: 2rem 0 2.5rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+.app-badge {
+  margin-bottom: 0.75rem;
+}
+
+.app-icon {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: rgba(0, 191, 174, 0.12);
+  border-radius: var(--radius);
+}
+
+.hero h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.tagline {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+/* Sections */
+section {
+  padding: 2rem 0;
+}
+
+section:nth-child(even) {
+  background: var(--surface);
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+h3 {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+h3:first-of-type {
+  margin-top: 1rem;
+}
+
+p {
+  margin: 0 0 1rem;
+  color: var(--text);
+}
+
+ul {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Features list */
+.features-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.features-list li {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.features-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.4em;
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+/* Support – prominent contact */
+.contact-primary {
+  font-size: 1.1rem;
+}
+
+.contact-primary a {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.25rem;
+  padding: 0 1.25rem;
+  min-height: 44px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: var(--radius);
+  text-decoration: none;
+}
+
+.contact-primary a:hover,
+.contact-primary a:focus {
+  background: var(--accent-dark);
+  color: #fff;
+  text-decoration: none;
+}
+
+.contact-note {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Privacy / Terms – readable blocks */
+.privacy ul,
+.terms ul {
+  padding-left: 1.25rem;
+}
+
+.privacy p:last-child,
+.terms p:last-child {
+  margin-bottom: 0;
+}
+
+/* Footer */
+.footer {
+  padding: 1.5rem 0;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.footer-nav {
+  margin-bottom: 1rem;
+}
+
+.footer-nav a {
+  margin: 0 0.75rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.footer-nav a:hover {
+  color: var(--accent);
+}
+
+.footer-copy {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Touch-friendly: contact link is min 44px tap target */
+
+/* Tablet and up – slightly larger type and spacing */
+@media (min-width: 600px) {
+  .container {
+    padding: 0 24px;
+  }
+
+  .hero {
+    padding: 3rem 0;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .tagline {
+    font-size: 1.1rem;
+  }
+
+  section {
+    padding: 2.5rem 0;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
