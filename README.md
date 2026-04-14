@@ -1,50 +1,54 @@
-# RepGen Support & Privacy Website
+# RepGen Fitness — Support Website
 
-Single-page site for **RepGen** (workout app) that satisfies Apple’s **Support URL** and **Privacy Policy URL** requirements for App Store submission.
+Single-page support & privacy site for the **RepGen** iOS app. Satisfies Apple's **Support URL** and **Privacy Policy URL** requirements for App Store submission.
 
-## What’s included
+## Structure
 
-- **Hero** – App name and tagline
-- **About / Features** – Short description of RepGen
-- **Support & Contact** – Prominent contact (email)
-- **Privacy Policy** – App-specific policy with data practices
-- **Terms of Use** – Short terms section
+| Section | Purpose |
+|---|---|
+| Nav | Sticky header with logo + links |
+| Hero | Wordmark logo, tagline, support CTA |
+| Screenshots | Phone mockup placeholders (replace with real screenshots) |
+| Features | 4 feature cards |
+| Support | Contact email (support@repgen.fit) |
+| Privacy Policy | Full policy (Apple required) |
+| Terms | Short terms of use |
+| Footer | Logo + nav links |
 
-The page is static (HTML + CSS), mobile-first, and works on iPhone/iPad.
+## Adding real screenshots
 
-## URLs for App Store Connect
+The three phone mockup frames in the **Screenshots** section are CSS placeholders. To replace them:
 
-After you deploy with HTTPS:
+1. Export 3 iPhone screenshots from your app (recommended: 390×844 PNG).
+2. Save them to `assets/screen-1.png`, `assets/screen-2.png`, `assets/screen-3.png`.
+3. In `index.html`, replace each `.phone-screen` div's contents with an `<img>` tag:
 
-- **Support URL:** `https://yourdomain.com` or `https://yourdomain.com#support`
-- **Privacy Policy URL:** `https://yourdomain.com#privacy`
+```html
+<div class="phone-screen">
+  <img src="assets/screen-1.png" alt="Workouts screen">
+</div>
+```
 
-Use the same domain for both; anchors scroll to the right section.
+## App Store Connect URLs
 
-## Customize before deploy
+After deploying to HTTPS:
 
-1. **Contact email** – Replace `support@repgen.app` in `index.html` with your real support email (search for `support@repgen.app` and replace all occurrences).
-2. **Domain** – Deploy to your chosen domain and use that in App Store Connect.
+- **Support URL** → `https://yourdomain.com#support`
+- **Privacy Policy URL** → `https://yourdomain.com#privacy`
 
-## Deploy (static hosting)
+## Deploy (no build step)
 
-Upload the contents of this folder to any static host with HTTPS:
+Upload this folder to any static host with HTTPS:
 
-- **GitHub Pages** – Push to a repo, enable Pages, select branch/folder.
-- **Netlify / Vercel** – Drag this folder or connect the repo; no build step.
-- **S3 + CloudFront, Firebase Hosting, etc.** – Serve `index.html` and `styles.css` as static files.
+- **GitHub Pages** – Push repo, enable Pages.
+- **Netlify / Vercel** – Drop the folder or connect the repo.
+- **S3 + CloudFront / Firebase Hosting** – Upload static files.
 
-No build step required. Ensure the site is served over **HTTPS**.
+## Apple checklist
 
-## Apple checklist (before submit)
-
-- [ ] Page loads over **HTTPS**
-- [ ] **Support URL** in App Store Connect points here; page clearly identifies RepGen and has working contact
-- [ ] **Privacy policy URL** in App Store Connect points here (e.g. `#privacy`)
-- [ ] Test on **iPhone/iPad** in Safari: readable, no horizontal scroll, buttons/links work
-- [ ] Page does **not** redirect to the App Store
-- [ ] (Recommended) In the RepGen app Settings, add links to this page for “Privacy policy” and “Help & support” using `expo-web-browser` or `Linking`
-
-## Optional: app icon on the page
-
-To show the RepGen app icon, copy `assets/images/icon.png` (or a web-friendly version) from the `workouts-expo-app` project into this repo (e.g. `icon.png`) and in `index.html` replace the `.app-icon` span with an `<img src="icon.png" alt="RepGen" width="64" height="64">` (or similar).
+- [ ] HTTPS live URL
+- [ ] Support URL set in App Store Connect (points to `#support`)
+- [ ] Privacy Policy URL set in App Store Connect (points to `#privacy`)
+- [ ] Tested in Safari on iPhone — readable, no horizontal scroll, buttons tap correctly
+- [ ] Page does NOT redirect to the App Store
+- [ ] (Recommended) Link to `#privacy` and `#support` from app Settings
