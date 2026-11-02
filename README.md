@@ -52,7 +52,7 @@ Upload this folder to any static host with HTTPS:
 - **Netlify / Vercel** – Drop the folder or connect the repo.
 - **S3 + CloudFront / Firebase Hosting** – Upload static files.
 
-## Apple checklist
+## Launch checklist
 
 - [ ] HTTPS live URL
 - [ ] Support URL set in App Store Connect (points to `#support`)
@@ -60,3 +60,4 @@ Upload this folder to any static host with HTTPS:
 - [ ] Tested in Safari on iPhone — readable, no horizontal scroll, buttons tap correctly
 - [ ] Page does NOT redirect to the App Store
 - [ ] (Recommended) Link to `#privacy` and `#support` from app Settings
+- [ ] Production Gemini API key is on a billing-enabled (paid tier) Google project before any real users, including beta testers.
