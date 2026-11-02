@@ -59,5 +59,8 @@ Upload this folder to any static host with HTTPS:
 - [ ] Privacy Policy URL set in App Store Connect (points to `/privacy/`, not only `#privacy`)
 - [ ] Tested in Safari on iPhone — readable, no horizontal scroll, buttons tap correctly
 - [ ] Page does NOT redirect to the App Store
-- [ ] (Recommended) Link to `#privacy` and `#support` from app Settings
+- [ ] (Recommended) Link to `/privacy/` and `#support` from the app
 - [ ] Production Gemini API key is on a billing-enabled (paid tier) Google project before any real users, including beta testers.
+- [ ] Remove draft banners and DRAFT comments before publish
+- [ ] Report and block, the content filter, and the AI consent screen are shipped in the app
+- [ ] App privacy link updated from `/#privacy` to `/privacy/`
