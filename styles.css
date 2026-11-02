@@ -446,6 +446,105 @@ a:hover { text-decoration: underline; }
   color: var(--teal);
 }
 
+.policy-block {
+  overflow-wrap: break-word;
+}
+
+.policy-block ul,
+.policy-block ol {
+  margin: 8px 0 14px 1.25rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.policy-block li {
+  margin: 6px 0;
+  line-height: 1.65;
+}
+
+.policy-block li::marker {
+  color: var(--teal);
+}
+
+.legal-doc h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+
+.legal-doc .policy-block h2 {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--teal);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 28px 0 8px;
+  scroll-margin-top: 76px;
+}
+
+#privacy,
+#terms {
+  scroll-margin-top: 76px;
+}
+
+.legal-doc .policy-block h2:first-child {
+  margin-top: 0;
+}
+
+.policy-block ul.policy-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+
+.policy-block ul.policy-jump li {
+  margin: 0;
+}
+
+.policy-jump a {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.policy-jump a:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.policy-block strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+p.draft-banner {
+  background: rgba(255, 193, 7, 0.12);
+  border: 1px solid rgba(255, 193, 7, 0.5);
+  color: #f6d78a;
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 22px;
+}
+
+.todo {
+  background: rgba(255, 186, 0, 0.22);
+  color: #ffe08a;
+  border-radius: 3px;
+  padding: 0.05em 0.28em;
+  font-weight: 600;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.policy-lead {
+  margin-bottom: 8px;
+}
+
 /* =============================================
    FOOTER
    ============================================= */
@@ -492,6 +591,14 @@ a:hover { text-decoration: underline; }
   text-decoration: none;
 }
 
+.footer-nav a.footer-health {
+  color: var(--teal);
+}
+
+.footer-nav a.footer-health:hover {
+  color: var(--text);
+}
+
 .footer-copy {
   font-size: 0.8rem;
   color: var(--text-dim);
@@ -513,7 +620,8 @@ a:hover { text-decoration: underline; }
   .features h2,
   .support h2,
   .privacy h2,
-  .terms h2 { font-size: 1.4rem; }
+  .terms h2,
+  .legal-doc h1 { font-size: 1.4rem; }
 
   .feature-grid { grid-template-columns: 1fr; }
 
