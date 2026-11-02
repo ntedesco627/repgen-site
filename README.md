@@ -11,9 +11,13 @@ Single-page support & privacy site for the **RepGen** iOS app. Satisfies Apple's
 | Screenshots | Phone mockup placeholders (replace with real screenshots) |
 | Features | 4 feature cards |
 | Support | Contact email (support@repgen.fit) |
-| Privacy Policy | Full policy (Apple required) |
-| Terms | Short terms of use |
-| Footer | Logo + nav links |
+| `#privacy` / `#terms` | Short summaries on the homepage. Existing links keep working and point to the full pages. |
+| Privacy Policy | Full draft at `/privacy/` (`privacy/index.html`) |
+| Terms of Use | Full draft at `/terms/` (`terms/index.html`) |
+| Consumer Health Data Privacy Policy | Separate draft at `/health-data/` (`health-data/index.html`), linked from the homepage footer |
+| Footer | Logo + nav links, including the consumer health data policy |
+
+The legal pages are drafts pending legal review. They are not legal advice. Facts that are not confirmed yet are marked `[TODO: …]` in the pages.
 
 ## Adding real screenshots
 
@@ -31,10 +35,14 @@ The three phone mockup frames in the **Screenshots** section are CSS placeholder
 
 ## App Store Connect URLs
 
-After deploying to HTTPS:
+After deploying to HTTPS (GitHub Pages serves the folder `index.html` files at these paths):
 
-- **Support URL** → `https://yourdomain.com#support`
-- **Privacy Policy URL** → `https://yourdomain.com#privacy`
+- **Support URL** → `https://repgen.fit/#support`
+- **Privacy Policy URL** → `https://repgen.fit/privacy/`
+- **Terms of Use** (linked from the privacy policy and the app, if you show it) → `https://repgen.fit/terms/`
+- **Consumer Health Data Privacy Policy** → `https://repgen.fit/health-data/`
+
+`https://repgen.fit/#privacy` and `https://repgen.fit/#terms` still open the homepage summaries.
 
 ## Deploy (no build step)
 
@@ -44,11 +52,15 @@ Upload this folder to any static host with HTTPS:
 - **Netlify / Vercel** – Drop the folder or connect the repo.
 - **S3 + CloudFront / Firebase Hosting** – Upload static files.
 
-## Apple checklist
+## Launch checklist
 
 - [ ] HTTPS live URL
 - [ ] Support URL set in App Store Connect (points to `#support`)
-- [ ] Privacy Policy URL set in App Store Connect (points to `#privacy`)
+- [ ] Privacy Policy URL set in App Store Connect (points to `/privacy/`, not only `#privacy`)
 - [ ] Tested in Safari on iPhone — readable, no horizontal scroll, buttons tap correctly
 - [ ] Page does NOT redirect to the App Store
-- [ ] (Recommended) Link to `#privacy` and `#support` from app Settings
+- [ ] (Recommended) Link to `/privacy/` and `#support` from the app
+- [ ] Production Gemini API key is on a billing-enabled (paid tier) Google project before any real users, including beta testers.
+- [ ] Remove draft banners and DRAFT comments before publish
+- [ ] Report and block, the content filter, and the AI consent screen are shipped in the app
+- [ ] App privacy link updated from `/#privacy` to `/privacy/`
